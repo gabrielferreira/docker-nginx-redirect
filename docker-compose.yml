@@ -1,0 +1,13 @@
+version: '2'
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8888:80"
+    environment:
+      - SERVER_REDIRECT=www.gabrielferreira.com.br
+    # optionally define path to redirect all requests
+    # if not set nginx var  is used
+    #   - SERVER_REDIRECT_PATH=/landingpage
